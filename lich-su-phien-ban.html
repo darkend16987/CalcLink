@@ -64,6 +64,10 @@
         <section>
           <h2 class="text-sm font-bold uppercase tracking-wider text-brand-700">Tháng 10 / 2026</h2>
           <ul class="mt-4 space-y-2.5 text-ink-muted">
+            <li><span class="font-semibold text-ink">0.4.1</span> · 06/10 — <b>Sửa chữ dính mép trên của ô khi dán.</b>
+              Table Style "Standard" của AutoCAD 2024 căn dòng dữ liệu ở phía trên. Khi dán bằng <code>CALCPASTE</code> mà chọn <b>Khong</b> ở câu hỏi lấy định dạng từ Calc
+              (hoặc ô nguồn không ghi căn lề), chữ bị dính mép trên của ô. Nay chữ căn giữa theo chiều dọc, căn ngang vẫn theo Table Style. Ô mà Calc cố ý căn trên/dưới vẫn giữ nguyên khi chọn <b>Co</b>.
+              Bảng có link: chạy lại <code>CALCUPDATE</code> để áp dụng; bảng dán không link thì dán lại.</li>
             <li><span class="font-semibold text-ink">0.4.0</span> · 06/10 — <b>Giữ kích thước đã chỉnh trong CAD khi cập nhật; bản phát hành công khai đầu tiên.</b>
               Trước đây <code>SCALE</code> bảng cho vừa khung tên rồi <code>CALCUPDATE</code> sẽ đưa bảng về cỡ lúc mới link (cột, chiều cao chữ; lề ô thì ở lại cỡ đã thu nhỏ, nên bảng bị lệch).
               Nay <code>CALCUPDATE</code> hỏi <b>Giu / Calc</b>. <b>Giu</b> (mặc định) giữ tỉ lệ SCALE, độ rộng cột đã kéo tay và chiều cao chữ đã đổi, vẫn cập nhật nội dung, ô gộp, màu, viền theo Calc; dòng, cột mới được thu nhỏ đúng tỉ lệ.

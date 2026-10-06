@@ -40,7 +40,7 @@ Khi nạp xong, dòng lệnh báo: *CalcLink đã nạp. Lệnh: CALCPASTE, CALC
 2. Trong AutoCAD: gõ `CALCPASTE`, rồi trả lời:
    - `Table style`: Enter để dùng style hiện hành.
    - `Dòng đầu là tiêu đề cột? [Co/Khong]`
-   - `Lấy định dạng và độ rộng cột từ Calc? [Co/Khong]`: chọn **Khong** thì định dạng theo Table Style, ô gộp **vẫn được giữ**.
+   - `Lấy định dạng và độ rộng cột từ Calc? [Co/Khong]`: chọn **Khong** thì định dạng theo Table Style (chữ vẫn căn giữa theo chiều dọc), ô gộp **vẫn được giữ**.
    - `Liên kết với file nguồn? [Co/Khong]`: chỉ hỏi khi file đang copy đã được lưu dạng `.ods`.
    - `Chiều cao chữ`, `Điểm chèn bảng`.
 3. Gõ `U` để huỷ bảng vừa dán.
