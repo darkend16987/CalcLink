@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chính sách &amp; quyền riêng tư — CalcLink</title>
+    <meta name="description" content="CalcLink chạy cục bộ trong AutoCAD, không gọi mạng và không gửi dữ liệu đi. Nêu rõ những gì plugin đọc, ghi và những gì trang web này tải." />
+    <link rel="canonical" href="https://darkend16987.github.io/CalcLink/chinh-sach.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/calclink-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"] },
+            colors: {
+              brand: { 50: "#f0fdfa", 100: "#ccfbf1", 200: "#99f6e4", 300: "#5eead4", 400: "#2dd4bf", 500: "#14b8a6", 600: "#0d9488", 700: "#0f766e", 800: "#115e59", 900: "#134e4a" },
+              cta: { 500: "#f97316", 600: "#ea580c" },
+              ink: { DEFAULT: "#0f172a", muted: "#475569" },
+            },
+            boxShadow: { card: "0 1px 3px rgba(15,23,42,.06), 0 10px 30px -18px rgba(15,23,42,.25)" },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <header class="fixed top-4 inset-x-4 z-40 mx-auto max-w-6xl">
+      <nav class="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-2.5 shadow-card backdrop-blur-md">
+        <a href="./" class="flex items-center gap-2.5 font-extrabold text-ink">
+          <img src="assets/calclink-icon.svg" alt="CalcLink" class="h-8 w-8 rounded-lg" />
+          <span>CalcLink</span>
+        </a>
+        <div class="ml-auto hidden items-center gap-1 md:flex">
+          <a href="./#features" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tính năng</a>
+          <a href="./#download" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Hướng dẫn</a>
+          <a href="lich-su-phien-ban.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Lịch sử phiên bản</a>
+          <a href="chinh-sach.html" class="rounded-lg bg-slate-100 px-3 py-2 text-sm font-medium text-ink">Chính sách</a>
+        </div>
+        <a href="./#download" class="ml-auto inline-flex cursor-pointer items-center gap-2 rounded-xl bg-cta-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cta-600 md:ml-0">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Tải về
+        </a>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-3xl px-5 pt-32 pb-20 md:pt-40">
+      <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">Chính sách &amp; quyền riêng tư</h1>
+      <p class="mt-4 leading-relaxed text-ink-muted">Trang này nói rõ CalcLink đọc, ghi và gửi đi những gì. Nội dung mô tả bản <b>0.4.0</b>.</p>
+
+      <div class="mt-10 space-y-10 text-[15px] leading-relaxed text-ink-muted">
+        <section>
+          <h2 class="text-xl font-bold text-ink">1. Plugin AutoCAD</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5">
+            <li><b>Không gọi mạng, không gửi dữ liệu đi.</b> CalcLink không có mã kết nối internet, không thu thập số liệu sử dụng và không có tài khoản hay kích hoạt.</li>
+            <li><b>Plugin đọc:</b> file .ods bạn chọn hoặc đã link; clipboard khi bạn gõ <code>CALCPASTE</code>; sự tồn tại của file khoá <code>.~lock.…#</code> cạnh file .ods (để nhắc bạn Save); đường dẫn cài đặt LibreOffice trong registry (chỉ đọc) khi mở nguồn bằng <code>CALCEDIT</code>.</li>
+            <li><b>Plugin ghi:</b> bảng và thông tin liên kết (đường dẫn file, sheet, vùng, kích thước đã dùng) vào <b>chính bản vẽ DWG</b> của bạn; và, chỉ khi bạn dùng <code>CALCLINKOPT</code>, tuỳ chọn trong <code>%APPDATA%\CalcLink\settings.ini</code>. CalcLink không ghi vào file .ods của bạn.</li>
+            <li><b>Chạy chương trình khác:</b> chỉ khi bạn nhấp đúp vào bảng liên kết hoặc gõ <code>CALCEDIT</code>, CalcLink mở file nguồn bằng LibreOffice (hoặc ứng dụng mặc định cho .ods).</li>
+            <li><b>Không đổi cài đặt bảo mật của AutoCAD.</b> Bộ cài chỉ chép file vào thư mục ApplicationPlugins. Gói chưa được ký số, nên AutoCAD có thể hỏi bảo mật khi nạp; việc thêm thư mục vào Trusted Locations là quyết định của bạn.</li>
+            <li>Liên kết lưu trong bản vẽ có đường dẫn đến file của bạn. Hãy cân nhắc khi gửi bản vẽ cho bên ngoài; <code>CALCUNLINK</code> xoá liên kết khỏi bảng.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="text-xl font-bold text-ink">2. Trang web này</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5">
+            <li>Trang được lưu trên GitHub Pages. <b>Không có cookie, không có công cụ phân tích</b> do trang này thêm vào.</li>
+            <li>Trình duyệt của bạn tải: phông chữ từ Google Fonts, kịch bản Tailwind từ <code>cdn.tailwindcss.com</code>, trình hiển thị Markdown từ <code>cdn.jsdelivr.net</code> (chỉ ở trang Hướng dẫn) và thông tin bản phát hành từ <code>api.github.com</code>. Các bên này, cũng như GitHub, có thể ghi nhận địa chỉ IP theo chính sách riêng của họ.</li>
+            <li>Nút tải về dẫn tới GitHub Releases của dự án.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="text-xl font-bold text-ink">3. Bảo hành</h2>
+          <p class="mt-3">CalcLink là bản <b>thử nghiệm</b>, cung cấp "nguyên trạng", không kèm bảo hành. Hãy kiểm tra bảng trong bản vẽ trước khi dùng cho hồ sơ chính thức, và giữ bản sao lưu bản vẽ.</p>
+        </section>
+        <section>
+          <h2 class="text-xl font-bold text-ink">4. Liên hệ</h2>
+          <p class="mt-3">Câu hỏi về chính sách này hay về dữ liệu: mở một mục tại <a class="font-medium text-brand-700 underline underline-offset-2" href="https://github.com/darkend16987/CalcLink/issues">GitHub Issues</a>.</p>
+        </section>
+      </div>
+    </main>
+    <footer class="border-t border-slate-200 bg-slate-50">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/calclink-icon.svg" alt="" class="h-7 w-7 rounded-md" />
+          <span class="font-bold">CalcLink</span>
+        </div>
+        <nav class="flex flex-wrap gap-4 text-sm text-ink-muted sm:ml-auto">
+          <a href="./#features" class="hover:text-ink">Tính năng</a>
+          <a href="./#download" class="hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="hover:text-ink">Hướng dẫn</a>
+          <a href="lich-su-phien-ban.html" class="hover:text-ink">Lịch sử phiên bản</a>
+          <a href="https://github.com/darkend16987/CalcLink/issues" class="hover:text-ink">Báo lỗi</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="CalcLink">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14b8a6"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- bảng: ô tiêu đề gộp + lưới -->
+  <rect x="96" y="112" width="320" height="288" rx="22" fill="#fff"/>
+  <rect x="96" y="112" width="320" height="76" rx="22" fill="#ccfbf1"/>
+  <rect x="96" y="150" width="320" height="38" fill="#ccfbf1"/>
+  <g stroke="#0f766e" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M96 188h320"/>
+    <path d="M96 256h320"/>
+    <path d="M96 324h320"/>
+    <path d="M203 188v212"/>
+    <path d="M310 188v212"/>
+  </g>
+  <rect x="96" y="112" width="320" height="288" rx="22" fill="none" stroke="#0f766e" stroke-width="10"/>
+  <!-- mắt xích liên kết -->
+  <g transform="translate(330 330)">
+    <circle r="78" fill="#f97316"/>
+    <g fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-9 14a24 24 0 0 0 34 0l22-22a24 24 0 0 0-34-34l-6 6"/>
+      <path d="M9-14a24 24 0 0 0-34 0l-22 22a24 24 0 0 0 34 34l6-6"/>
+    </g>
+  </g>
+</svg>

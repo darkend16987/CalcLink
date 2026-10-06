@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lịch sử phiên bản — CalcLink</title>
+    <meta name="description" content="Các mốc phát hành của CalcLink, plugin đưa bảng LibreOffice Calc vào AutoCAD 2024." />
+    <link rel="canonical" href="https://darkend16987.github.io/CalcLink/lich-su-phien-ban.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/calclink-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"] },
+            colors: {
+              brand: { 50: "#f0fdfa", 100: "#ccfbf1", 200: "#99f6e4", 300: "#5eead4", 400: "#2dd4bf", 500: "#14b8a6", 600: "#0d9488", 700: "#0f766e", 800: "#115e59", 900: "#134e4a" },
+              cta: { 500: "#f97316", 600: "#ea580c" },
+              ink: { DEFAULT: "#0f172a", muted: "#475569" },
+            },
+            boxShadow: { card: "0 1px 3px rgba(15,23,42,.06), 0 10px 30px -18px rgba(15,23,42,.25)" },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <header class="fixed top-4 inset-x-4 z-40 mx-auto max-w-6xl">
+      <nav class="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-2.5 shadow-card backdrop-blur-md">
+        <a href="./" class="flex items-center gap-2.5 font-extrabold text-ink">
+          <img src="assets/calclink-icon.svg" alt="CalcLink" class="h-8 w-8 rounded-lg" />
+          <span>CalcLink</span>
+        </a>
+        <div class="ml-auto hidden items-center gap-1 md:flex">
+          <a href="./#features" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tính năng</a>
+          <a href="./#download" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Hướng dẫn</a>
+          <a href="lich-su-phien-ban.html" class="rounded-lg bg-slate-100 px-3 py-2 text-sm font-medium text-ink">Lịch sử phiên bản</a>
+          <a href="chinh-sach.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Chính sách</a>
+        </div>
+        <a href="./#download" class="ml-auto inline-flex cursor-pointer items-center gap-2 rounded-xl bg-cta-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cta-600 md:ml-0">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Tải về
+        </a>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-3xl px-5 pt-32 pb-20 md:pt-40">
+      <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">Lịch sử phiên bản</h1>
+      <p class="mt-4 leading-relaxed text-ink-muted">
+        CalcLink bắt đầu từ việc dán một vùng ô của Calc vào AutoCAD mà không mất ô gộp, rồi lớn dần thành bảng liên kết với file .ods.
+        Dưới đây là các mốc phát hành, mới nhất ở trên.
+      </p>
+      <p class="mt-3 text-sm text-ink-muted">
+        Bản mới nhất luôn có ở <a href="./#download" class="font-medium text-brand-700 underline underline-offset-2 hover:text-brand-800">mục Tải về</a>.
+        Mọi bản hiện là <b>bản thử nghiệm</b>: các phần chạy trên giao diện AutoCAD (nhấp đúp, nhắc khi Save) chưa được kiểm.
+      </p>
+
+      <!-- Văn bản thuần: mỗi bản một mục, như một changelog thường được đọc lướt. -->
+      <div class="mt-12 space-y-10 text-[15px] leading-relaxed">
+        <section>
+          <h2 class="text-sm font-bold uppercase tracking-wider text-brand-700">Tháng 10 / 2026</h2>
+          <ul class="mt-4 space-y-2.5 text-ink-muted">
+            <li><span class="font-semibold text-ink">0.4.0</span> · 06/10 — <b>Giữ kích thước đã chỉnh trong CAD khi cập nhật; bản phát hành công khai đầu tiên.</b>
+              Trước đây <code>SCALE</code> bảng cho vừa khung tên rồi <code>CALCUPDATE</code> sẽ đưa bảng về cỡ lúc mới link (cột, chiều cao chữ; lề ô thì ở lại cỡ đã thu nhỏ, nên bảng bị lệch).
+              Nay <code>CALCUPDATE</code> hỏi <b>Giu / Calc</b>. <b>Giu</b> (mặc định) giữ tỉ lệ SCALE, độ rộng cột đã kéo tay và chiều cao chữ đã đổi, vẫn cập nhật nội dung, ô gộp, màu, viền theo Calc; dòng, cột mới được thu nhỏ đúng tỉ lệ.
+              <b>Calc</b> đưa bảng về như lúc mới link. Lựa chọn nhớ theo từng bảng; tự cập nhật và <code>CALCRELINK</code> dùng lựa chọn đã nhớ. <code>CALCLINKINFO</code> hiện chế độ và tỉ lệ. Bảng tạo bằng bản cũ cũng dùng được.
+              Giới hạn: độ rộng kéo tay được giữ theo <b>vị trí cột</b>; chèn hay xoá cột ở giữa trong Calc có thể phải kéo lại.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 class="text-sm font-bold uppercase tracking-wider text-brand-700">Tháng 9 / 2026</h2>
+          <ul class="mt-4 space-y-2.5 text-ink-muted">
+            <li><span class="font-semibold text-ink">0.3.0</span> — <b>Nhấp đúp mở nguồn, nhắc khi Save, viền ô và cỡ chữ.</b>
+              <code>CALCEDIT</code> và nhấp đúp vào bảng liên kết mở file trong Calc, chọn sẵn vùng đang link. Khi file nguồn được Save lúc bản vẽ đang mở: nhắc <code>CALCUPDATE</code> (mặc định) hoặc tự cập nhật; chỉnh bằng <code>CALCLINKOPT</code>.
+              Viền ô mang sang theo cách Calc vẽ (độ dày, màu, nét đôi, cạnh chung, viền quanh ô gộp); cỡ chữ theo tỉ lệ so với chữ mặc định. Nguồn không có viền thì giữ lưới của Table Style.</li>
+            <li><span class="font-semibold text-ink">0.2.0</span> — <b>Liên kết với file .ods.</b>
+              <code>CALCLINK</code>, <code>CALCUPDATE</code> (Enter = mọi bảng liên kết), <code>CALCLINKINFO</code>, <code>CALCUNLINK</code>, <code>CALCRELINK</code>. Dán kèm liên kết từ clipboard, link theo tên vùng (tự giãn khi chèn dòng),
+              đường dẫn tương đối để chuyển thư mục dự án, đọc style của .ods có kế thừa, bỏ dòng/cột ẩn, nhắc khi mở bản vẽ có bảng cũ hơn file nguồn, khoá nội dung ô của bảng liên kết, bộ cài tự nạp (autoloader bundle).
+              Gồm cả <code>CALCPASTE</code>: dán giữ ô gộp ngang/dọc và định dạng cơ bản (đậm, nghiêng, căn lề, màu nền, màu chữ, độ rộng cột).</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+    <footer class="border-t border-slate-200 bg-slate-50">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/calclink-icon.svg" alt="" class="h-7 w-7 rounded-md" />
+          <span class="font-bold">CalcLink</span>
+        </div>
+        <nav class="flex flex-wrap gap-4 text-sm text-ink-muted sm:ml-auto">
+          <a href="./#features" class="hover:text-ink">Tính năng</a>
+          <a href="./#download" class="hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="hover:text-ink">Hướng dẫn</a>
+          <a href="chinh-sach.html" class="hover:text-ink">Chính sách</a>
+          <a href="https://github.com/darkend16987/CalcLink/issues" class="hover:text-ink">Báo lỗi</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

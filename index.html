@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CalcLink — Bảng LibreOffice Calc thành bảng AutoCAD thật, cập nhật bằng một lệnh</title>
+    <meta name="description" content="CalcLink đưa bảng từ LibreOffice Calc vào AutoCAD 2024 thành bảng AutoCAD thật: giữ ô gộp, viền, màu, cỡ chữ; liên kết với file .ods và cập nhật bằng một lệnh." />
+    <meta property="og:site_name" content="CalcLink" />
+    <meta property="og:title" content="CalcLink — Bảng Calc thành bảng AutoCAD thật, cập nhật bằng một lệnh" />
+    <meta property="og:description" content="Giữ ô gộp, viền, màu, cỡ chữ. Liên kết với file .ods của LibreOffice Calc, sửa xong Save rồi CALCUPDATE." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://darkend16987.github.io/CalcLink/" />
+    <meta property="og:image" content="https://darkend16987.github.io/CalcLink/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CalcLink — bảng LibreOffice Calc thành bảng AutoCAD thật" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CalcLink — Bảng Calc thành bảng AutoCAD thật, cập nhật bằng một lệnh" />
+    <meta name="twitter:description" content="Giữ ô gộp, viền, màu, cỡ chữ. Liên kết với file .ods và cập nhật bằng một lệnh." />
+    <meta name="twitter:image" content="https://darkend16987.github.io/CalcLink/og-image.png" />
+    <link rel="canonical" href="https://darkend16987.github.io/CalcLink/" />
+    <link rel="icon" type="image/svg+xml" href="assets/calclink-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"], mono: ["ui-monospace", "SFMono-Regular", "Consolas", "monospace"] },
+            colors: {
+              brand: { 50: "#f0fdfa", 100: "#ccfbf1", 200: "#99f6e4", 300: "#5eead4", 400: "#2dd4bf", 500: "#14b8a6", 600: "#0d9488", 700: "#0f766e", 800: "#115e59", 900: "#134e4a" },
+              cta: { 500: "#f97316", 600: "#ea580c" },
+              ink: { DEFAULT: "#0f172a", muted: "#475569" },
+            },
+            boxShadow: { soft: "0 10px 40px -12px rgba(13,148,136,.25)", card: "0 1px 3px rgba(15,23,42,.06), 0 10px 30px -18px rgba(15,23,42,.25)" },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <!-- Floating navbar -->
+    <header class="fixed top-4 inset-x-4 z-40 mx-auto max-w-6xl">
+      <nav class="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-2.5 shadow-card backdrop-blur-md">
+        <a href="#top" class="flex items-center gap-2.5 font-extrabold text-ink">
+          <img src="assets/calclink-icon.svg" alt="CalcLink" class="h-8 w-8 rounded-lg" />
+          <span>CalcLink</span>
+        </a>
+        <div class="ml-auto hidden items-center gap-1 md:flex">
+          <a href="#features" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tính năng</a>
+          <a href="#how" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Cách dùng</a>
+          <a href="#download" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Hướng dẫn</a>
+          <a href="lich-su-phien-ban.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Lịch sử phiên bản</a>
+          <a href="chinh-sach.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Chính sách</a>
+          <a href="#contact" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Liên hệ</a>
+        </div>
+        <a href="#download" class="ml-auto inline-flex cursor-pointer items-center gap-2 rounded-xl bg-cta-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cta-600 md:ml-0">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Tải về
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="top" class="relative overflow-hidden pt-32 pb-20 md:pt-40 lg:pb-40">
+      <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute left-1/2 top-0 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-b from-brand-100 to-transparent blur-3xl opacity-70"></div>
+      </div>
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand-500"></span> AutoCAD 2024 · LibreOffice Calc · Tiếng Việt
+          </span>
+          <h1 class="mt-5 text-4xl font-extrabold leading-[1.1] tracking-tight text-ink md:text-5xl">
+            Bảng từ Calc vào AutoCAD<br /><span class="text-brand-600">là bảng thật, cập nhật bằng một lệnh</span>
+          </h1>
+          <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink-muted">
+            Copy một vùng ô trong LibreOffice Calc rồi dán vào bản vẽ thành <b>bảng AutoCAD thật</b> — giữ ô gộp, viền, màu nền,
+            cỡ chữ, độ rộng cột. Liên kết bảng với file <code class="rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em]">.ods</code>:
+            sửa trong Calc, Save, gõ <code class="rounded bg-slate-100 px-1.5 py-0.5 text-[0.9em]">CALCUPDATE</code> là bảng trong bản vẽ cập nhật theo.
+            Không cần Excel.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#download" class="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-cta-500 px-6 py-3.5 font-semibold text-white shadow-soft transition-colors hover:bg-cta-600">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+              Tải CalcLink
+            </a>
+            <a href="#features" class="inline-flex cursor-pointer items-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-semibold text-ink transition-colors hover:bg-slate-50">
+              Xem tính năng
+            </a>
+          </div>
+          <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-ink-muted">
+            <span class="inline-flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cập nhật không cần mở Calc</span>
+            <span class="inline-flex items-center gap-1.5"><svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Không gọi mạng, dữ liệu ở lại trên máy</span>
+          </div>
+        </div>
+
+        <!-- AutoCAD window mockup: ảnh thật (AutoCAD PLOT) + ảnh Calc nguồn -->
+        <div class="relative">
+          <div class="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-brand-100 via-white to-orange-50 blur-2xl"></div>
+          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+            <div class="flex items-center gap-1.5 border-b border-slate-100 bg-slate-50 px-4 py-3">
+              <span class="h-3 w-3 rounded-full bg-red-400"></span>
+              <span class="h-3 w-3 rounded-full bg-amber-400"></span>
+              <span class="h-3 w-3 rounded-full bg-green-400"></span>
+              <span class="ml-3 text-xs font-medium text-ink-muted">AutoCAD 2024 — ban-ve.dwg</span>
+            </div>
+            <div class="p-4">
+              <div class="mb-3 flex flex-wrap gap-1.5">
+                <span class="rounded-md bg-brand-600 px-2.5 py-1 text-[11px] font-semibold text-white">CALCPASTE</span>
+                <span class="rounded-md bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-ink-muted">CALCLINK</span>
+                <span class="rounded-md bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-ink-muted">CALCUPDATE</span>
+                <span class="rounded-md bg-slate-100 px-2.5 py-1 text-[11px] font-medium text-ink-muted">CALCEDIT</span>
+              </div>
+              <div class="rounded-lg border border-slate-200 bg-white p-3">
+                <img src="assets/cad-borders.png" alt="Bảng AutoCAD có ô gộp, viền đỏ, nét đôi và cỡ chữ khác nhau, tạo từ Calc" class="w-full" width="1597" height="793" />
+              </div>
+              <div class="mt-3 flex items-center justify-between rounded-lg bg-slate-900 px-3 py-2">
+                <span class="text-[11px] font-medium text-slate-300">Đã cập nhật 7 x 4, 2 ô gộp (vien.ods / Vien / A1:D7)</span>
+                <span class="rounded bg-brand-500 px-2 py-0.5 text-[10px] font-semibold text-white">Xong</span>
+              </div>
+            </div>
+          </div>
+          <div class="absolute -bottom-32 left-6 hidden w-56 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-card sm:block">
+            <div class="border-b border-slate-100 bg-slate-50 px-3 py-1.5 text-[10px] font-semibold text-ink-muted">Nguồn trong LibreOffice Calc</div>
+            <img src="assets/calc-vien.png" alt="Cùng vùng ô trong LibreOffice Calc" class="w-full p-1.5" width="917" height="378" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="border-y border-slate-100 bg-slate-50/60">
+      <div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-5 py-10 sm:grid-cols-4">
+        <div><div class="text-2xl font-extrabold text-brand-700">8</div><div class="text-sm text-ink-muted">Lệnh trong AutoCAD</div></div>
+        <div><div class="text-2xl font-extrabold text-brand-700">Ô gộp</div><div class="text-sm text-ink-muted">Giữ đúng như trong Calc</div></div>
+        <div><div class="text-2xl font-extrabold text-brand-700">.ods</div><div class="text-sm text-ink-muted">Liên kết &amp; cập nhật</div></div>
+        <div><div class="text-2xl font-extrabold text-brand-700">Offline</div><div class="text-sm text-ink-muted">Không gọi mạng</div></div>
+      </div>
+    </section>
+
+    <!-- What's new: bản mới nhất, nói ngắn gọn. Số phiên bản được điền từ GitHub release (app.js), giá trị dưới đây là dự phòng. -->
+    <section id="whats-new" class="mx-auto max-w-6xl px-5 pt-20 md:pt-28">
+      <div class="rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-50 via-white to-orange-50/60 p-7 shadow-card md:p-10">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">Mới</span>
+          <span class="text-sm font-semibold text-brand-800">Bản <span id="whatsnew-version">v0.4.0</span> · 06/10/2026 · thử nghiệm</span>
+          <a href="lich-su-phien-ban.html" class="ml-auto text-sm font-medium text-brand-700 underline underline-offset-2 hover:text-brand-800">Xem toàn bộ lịch sử →</a>
+        </div>
+        <h2 class="mt-5 text-2xl font-extrabold tracking-tight md:text-3xl">Thu nhỏ bảng cho vừa khung tên — cập nhật không còn đẩy về cỡ cũ</h2>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div>
+            <h3 class="flex items-center gap-2 font-bold text-ink">
+              <svg class="h-5 w-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+              Giữ kích thước đã chỉnh trong CAD
+            </h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink-muted">
+              Dùng <code>SCALE</code> thu nhỏ bảng cho vừa khung tên, kéo hẹp một cột, hay đổi chiều cao chữ? Khi gõ <b>CALCUPDATE</b>
+              lệnh hỏi <b>Giu / Calc</b>. <b>Giu</b> (mặc định) cập nhật nội dung, ô gộp, màu, viền theo Calc nhưng
+              <b>giữ nguyên tỉ lệ, cột đã kéo và chiều cao chữ</b> của bạn; dòng, cột mới thêm cũng được thu nhỏ đúng tỉ lệ.
+              <b>Calc</b> đưa bảng về đúng như lúc mới link. Lựa chọn được nhớ theo từng bảng.
+            </p>
+          </div>
+          <div>
+            <h3 class="flex items-center gap-2 font-bold text-ink">
+              <svg class="h-5 w-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              Nhấp đúp để sửa nguồn, được nhắc khi Save
+            </h3>
+            <p class="mt-2 text-[15px] leading-relaxed text-ink-muted">
+              <b>Nhấp đúp</b> vào bảng liên kết (hoặc gõ <b>CALCEDIT</b>) để mở file trong Calc, chọn sẵn đúng vùng đang link.
+              Sửa xong <b>Save</b>: AutoCAD nhắc gõ CALCUPDATE, hoặc tự cập nhật nếu bạn bật trong <b>CALCLINKOPT</b>.
+              Bảng vẫn là bảng AutoCAD thật — snap được, in nét, máy chỉ xem bản vẽ không cần LibreOffice.
+            </p>
+          </div>
+        </div>
+        <p class="mt-6 text-sm text-ink-muted">
+          <b>Lưu ý:</b> đây là <b>bản thử nghiệm</b>. Nhấp đúp và nhắc/tự cập nhật khi Save mới được kiểm bằng test tự động,
+          <b>chưa thử trên giao diện AutoCAD</b>. Nếu gặp sai khác, hãy
+          <a href="https://github.com/darkend16987/CalcLink/issues" class="font-medium text-brand-700 underline underline-offset-2">báo lỗi</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Từ Calc sang AutoCAD: kết quả thật -->
+    <section id="result" class="mx-auto max-w-6xl px-5 pt-20 md:pt-28">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Từ Calc sang AutoCAD, giữ nguyên cấu trúc</h2>
+        <p class="mt-4 text-lg text-ink-muted">Ảnh thật, không dựng lại: bên trái do LibreOffice Calc vẽ, bên phải xuất từ AutoCAD 2024 (lệnh PLOT) sau khi CalcLink tạo bảng.</p>
+      </div>
+      <div class="mt-12 grid items-start gap-6 lg:grid-cols-2">
+        <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+          <figcaption class="border-b border-slate-100 bg-slate-50 px-4 py-2.5 text-sm font-semibold text-ink">1 · Trong LibreOffice Calc <span class="font-normal text-ink-muted">— ô gộp, viền đỏ, nét đôi, nhiều cỡ chữ</span></figcaption>
+          <div class="p-4"><img src="assets/calc-vien.png" alt="Vùng ô A1:D7 trong LibreOffice Calc" class="w-full" loading="lazy" width="917" height="378" /></div>
+        </figure>
+        <figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+          <figcaption class="border-b border-slate-100 bg-slate-50 px-4 py-2.5 text-sm font-semibold text-ink">2 · Bảng AutoCAD thật <span class="font-normal text-ink-muted">— CALCLINK hoặc CALCPASTE</span></figcaption>
+          <div class="p-4"><img src="assets/cad-borders.png" alt="Bảng AutoCAD tạo từ cùng vùng ô" class="w-full" loading="lazy" width="1597" height="793" /></div>
+        </figure>
+      </div>
+      <figure class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+        <figcaption class="border-b border-slate-100 bg-slate-50 px-4 py-2.5 text-sm font-semibold text-ink">Bảng khối lượng <span class="font-normal text-ink-muted">— ô gộp ngang và dọc, màu nền, màu chữ, căn lề, ô nhiều dòng, số và ngày theo đúng hiển thị trong Calc</span></figcaption>
+        <div class="p-4"><img src="assets/cad-result.png" alt="Bảng khối lượng trong AutoCAD, tạo từ file .ods" class="mx-auto w-full max-w-3xl" loading="lazy" width="1598" height="676" /></div>
+      </figure>
+      <p class="mt-4 text-center text-sm text-ink-muted">Vùng không có viền nào trong Calc thì bảng giữ lưới của Table Style, như bảng khối lượng ở trên.</p>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Ba bước</h2>
+        <p class="mt-4 text-lg text-ink-muted">Dán một lần, về sau chỉ cần Save trong Calc rồi cập nhật.</p>
+      </div>
+      <div class="mt-14 grid gap-5 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-lg font-extrabold text-white">1</div>
+          <h3 class="mt-5 text-lg font-bold">Copy trong Calc, dán vào CAD</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-muted">Bôi đen vùng ô, <b>Ctrl+C</b>. Trong AutoCAD gõ <code class="rounded bg-slate-100 px-1.5 py-0.5">CALCPASTE</code>. File đã lưu dạng <code>.ods</code> thì lệnh hỏi có <b>liên kết</b> không. Hoặc gõ <code class="rounded bg-slate-100 px-1.5 py-0.5">CALCLINK</code> để chọn file, sheet, vùng — không cần mở Calc.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-lg font-extrabold text-white">2</div>
+          <h3 class="mt-5 text-lg font-bold">Sửa trong Calc, Save</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-muted">Đổi chữ, thêm bớt dòng, gộp hay bỏ gộp ô. <b>Nhấp đúp</b> vào bảng hoặc <code class="rounded bg-slate-100 px-1.5 py-0.5">CALCEDIT</code> để mở đúng file và vùng. Đặt <b>tên vùng</b> trong Calc để link không lệch khi chèn dòng.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-card">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 text-lg font-extrabold text-white">3</div>
+          <h3 class="mt-5 text-lg font-bold">Gõ CALCUPDATE</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-muted"><code class="rounded bg-slate-100 px-1.5 py-0.5">CALCUPDATE</code> rồi Enter là cập nhật <b>mọi bảng liên kết</b> trong bản vẽ. Bảng giữ vị trí, layer, Table Style. Chọn <b>Giu</b> để giữ kích thước bạn đã chỉnh trong CAD.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="bg-slate-50/60 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Mọi việc với bảng Calc trong bản vẽ</h2>
+          <p class="mt-4 text-lg text-ink-muted">Từ dán nhanh một vùng ô đến một bảng liên kết luôn khớp với file nguồn.</p>
+        </div>
+        <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" id="feature-grid"></div>
+      </div>
+    </section>
+
+    <!-- Requirements / limits -->
+    <section id="requirements" class="bg-slate-900 py-20 text-white md:py-28">
+      <div class="mx-auto max-w-6xl px-5">
+        <div class="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-brand-200">Yêu cầu &amp; lưu ý</span>
+            <h2 class="mt-5 text-3xl font-extrabold tracking-tight md:text-4xl">Nói rõ trước những gì CalcLink làm và chưa làm</h2>
+            <p class="mt-4 text-lg leading-relaxed text-slate-300">
+              CalcLink đọc trực tiếp file <b class="text-white">.ods</b> nên không cần Excel và không cần mở LibreOffice khi cập nhật.
+              Nó đọc nội dung <b class="text-white">đã lưu</b> của file, vì vậy hãy Save trong Calc trước khi cập nhật.
+            </p>
+            <ul class="mt-6 space-y-3 text-slate-300">
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> AutoCAD 2024 bản đầy đủ (R24.0–R24.3), Windows 64-bit. <b class="text-white">Không chạy trên AutoCAD LT.</b></li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Liên kết &amp; cập nhật: file <b class="text-white">.ods</b>. File .xlsx: hãy Save As sang .ods.</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Không mang sang: tên font (theo Table Style), định dạng có điều kiện. Nét đứt/chấm thành nét liền.</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Dòng/cột đang ẩn trong Calc không được đưa vào bảng.</li>
+              <li class="flex gap-3"><svg class="mt-0.5 h-5 w-5 shrink-0 text-brand-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ô trong bảng liên kết bị khoá nội dung (sửa tay sẽ bị ghi đè); muốn sửa tay thì <code class="text-brand-300">CALCUNLINK</code>.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <div class="text-sm font-medium text-slate-400">Trạng thái kiểm thử</div>
+            <div class="mt-3 rounded-xl bg-slate-950/60 p-4 font-mono text-sm">
+              <div class="text-slate-500"># v0.4.0</div>
+              <div class="mt-2 flex flex-wrap items-center gap-2">
+                <span class="rounded bg-slate-800 px-2 py-1 text-brand-300">Test tự động</span>
+                <span class="rounded bg-brand-500 px-2 py-1 text-white">Đạt</span>
+              </div>
+              <div class="mt-3 flex flex-wrap items-center gap-2">
+                <span class="rounded bg-slate-800 px-2 py-1 text-slate-300">Giao diện AutoCAD</span>
+                <span class="rounded bg-orange-500 px-2 py-1 text-white">Chưa kiểm</span>
+              </div>
+              <div class="mt-3 text-xs text-slate-500">Tạo bảng, ô gộp, viền, cập nhật, giữ kích thước đã chạy trên AutoCAD 2024 (accoreconsole) và đối chiếu ảnh in.</div>
+            </div>
+            <p class="mt-4 text-sm leading-relaxed text-slate-300">
+              Phần chưa kiểm trên giao diện: nhấp đúp mở nguồn, nhắc/tự cập nhật khi Save, tiếng Việt ở dòng lệnh, tự nạp khi mở AutoCAD.
+              Hãy thử trên bản vẽ phụ trước khi dùng cho bản vẽ chính, và báo lỗi nếu có.
+            </p>
+            <a href="https://github.com/darkend16987/CalcLink/issues" class="mt-3 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-brand-300 hover:underline">Báo lỗi trên GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download" class="mx-auto max-w-6xl px-5 py-20 md:py-28">
+      <div class="overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-brand-50 via-white to-orange-50 p-8 shadow-card md:p-12">
+        <div class="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">Tải CalcLink cho AutoCAD 2024</h2>
+            <p class="mt-4 text-lg text-ink-muted">Phiên bản <span id="dl-version" class="font-semibold text-brand-700">mới nhất</span>. Gói nhỏ, cài bằng một script, AutoCAD tự nạp mỗi lần mở.</p>
+            <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+              <a id="dl-installer" href="https://github.com/darkend16987/CalcLink/releases/latest" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl bg-cta-500 px-6 py-3.5 font-semibold text-white shadow-soft transition-colors hover:bg-cta-600">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+                Tải gói cài đặt (.zip)
+              </a>
+              <a href="huong-dan.html#1-cai-dat" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 font-semibold text-ink transition-colors hover:bg-slate-50">Hướng dẫn cài đặt</a>
+            </div>
+            <p class="mt-4 text-sm text-ink-muted">Đối chiếu file tải về bằng <a id="dl-sums" href="https://github.com/darkend16987/CalcLink/releases/latest" class="font-medium text-brand-700 underline underline-offset-2">SHA256SUMS.txt</a> trong cùng bản phát hành. Gói chưa ký số: AutoCAD có thể hỏi bảo mật khi nạp lần đầu.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><div class="text-sm font-semibold text-ink">AutoCAD 2024</div><div class="mt-1 text-xs text-ink-muted">R24.0 – R24.3, bản đầy đủ</div></div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><div class="text-sm font-semibold text-ink">Windows 64-bit</div><div class="mt-1 text-xs text-ink-muted">Không cần Excel</div></div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><div class="text-sm font-semibold text-ink">~60 KB</div><div class="mt-1 text-xs text-ink-muted">Một DLL + script cài đặt</div></div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4"><div class="text-sm font-semibold text-ink">Bản thử nghiệm</div><div class="mt-1 text-xs text-ink-muted">Xem mục "Yêu cầu &amp; lưu ý"</div></div>
+          </div>
+        </div>
+        <div class="mt-10 rounded-2xl border border-slate-200 bg-white p-5">
+          <div class="text-sm font-semibold text-ink">Cài nhanh</div>
+          <ol class="mt-3 list-decimal space-y-1.5 pl-5 text-sm text-ink-muted">
+            <li>Đóng AutoCAD, giải nén <code>CalcLink.bundle.zip</code>.</li>
+            <li>Mở PowerShell trong thư mục <code>CalcLink.bundle</code>, chạy: <code class="rounded bg-slate-100 px-1.5 py-0.5">powershell -ExecutionPolicy Bypass -File install.ps1</code></li>
+            <li>Mở AutoCAD: dòng lệnh báo <i>CalcLink đã nạp</i>. Để AutoCAD không hỏi bảo mật mỗi lần, thêm thư mục <code>%APPDATA%\Autodesk\ApplicationPlugins\CalcLink.bundle\Contents</code> vào <b>Options → Files → Trusted Locations</b>.</li>
+          </ol>
+          <p class="mt-3 text-xs text-ink-muted">Script chỉ chép file, không đổi cài đặt bảo mật của AutoCAD. Cài cho mọi người dùng: thêm <code>-AllUsers</code> (cần quyền admin). Gỡ: thêm <code>-Uninstall</code>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About + Contact -->
+    <section id="contact" class="mx-auto max-w-6xl px-5 pb-24">
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-card">
+          <h3 class="text-xl font-bold">Về dự án</h3>
+          <p class="mt-3 leading-relaxed text-ink-muted">
+            CalcLink sinh ra từ một việc rất đời thường của người làm bản vẽ: bảng thống kê làm trong Calc, rồi phải dựng lại trong AutoCAD
+            mỗi lần số liệu đổi. Mục tiêu: bảng trong bản vẽ luôn khớp file nguồn, giữ nguyên ô gộp và định dạng, không phải dán ảnh hay làm lại bằng tay.
+            Phát hành trên GitHub bởi <a href="https://github.com/darkend16987" class="font-medium text-brand-700 underline underline-offset-2">darkend16987</a>.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-card">
+          <h3 class="text-xl font-bold">Báo lỗi &amp; góp ý</h3>
+          <p class="mt-3 text-ink-muted">Gặp lỗi hay muốn thêm tính năng? Mở một mục trên GitHub, kèm nguyên văn thông báo ở dòng lệnh và file .ods (hoặc vùng ô) gây lỗi.</p>
+          <a href="https://github.com/darkend16987/CalcLink/issues/new" class="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-xl bg-slate-900 px-5 py-3 font-semibold text-white transition-colors hover:bg-slate-800">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+            Mở issue trên GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 bg-slate-50">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/calclink-icon.svg" alt="" class="h-7 w-7 rounded-md" />
+          <span class="font-bold">CalcLink</span>
+          <span class="text-sm text-ink-muted">· cho AutoCAD 2024 &amp; LibreOffice Calc</span>
+        </div>
+        <nav class="flex flex-wrap gap-4 text-sm text-ink-muted sm:ml-auto">
+          <a href="#features" class="hover:text-ink">Tính năng</a>
+          <a href="#download" class="hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="hover:text-ink">Hướng dẫn</a>
+          <a href="lich-su-phien-ban.html" class="hover:text-ink">Lịch sử phiên bản</a>
+          <a href="chinh-sach.html" class="hover:text-ink">Chính sách</a>
+          <a href="https://github.com/darkend16987/CalcLink/issues" class="hover:text-ink">Báo lỗi</a>
+        </nav>
+      </div>
+      <div class="border-t border-slate-200 py-5 text-center text-xs text-ink-muted">© <span id="year"></span> CalcLink. LibreOffice là nhãn hiệu của The Document Foundation; AutoCAD là nhãn hiệu của Autodesk, Inc. CalcLink không liên kết với hai tổ chức này.</div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>

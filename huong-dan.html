@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hướng dẫn sử dụng — CalcLink</title>
+    <meta name="description" content="Hướng dẫn cài đặt và sử dụng CalcLink: dán bảng từ LibreOffice Calc vào AutoCAD, liên kết file .ods, cập nhật, giữ kích thước, nhấp đúp mở nguồn." />
+    <link rel="canonical" href="https://darkend16987.github.io/CalcLink/huong-dan.html" />
+    <link rel="icon" type="image/svg+xml" href="assets/calclink-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"] },
+            colors: {
+              brand: { 50: "#f0fdfa", 100: "#ccfbf1", 200: "#99f6e4", 300: "#5eead4", 400: "#2dd4bf", 500: "#14b8a6", 600: "#0d9488", 700: "#0f766e", 800: "#115e59", 900: "#134e4a" },
+              cta: { 500: "#f97316", 600: "#ea580c" },
+              ink: { DEFAULT: "#0f172a", muted: "#475569" },
+            },
+            boxShadow: { card: "0 1px 3px rgba(15,23,42,.06), 0 10px 30px -18px rgba(15,23,42,.25)" },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="font-sans text-ink bg-white antialiased">
+    <header class="fixed top-4 inset-x-4 z-40 mx-auto max-w-6xl">
+      <nav class="flex items-center gap-3 rounded-2xl border border-slate-200/70 bg-white/80 px-4 py-2.5 shadow-card backdrop-blur-md">
+        <a href="./" class="flex items-center gap-2.5 font-extrabold text-ink">
+          <img src="assets/calclink-icon.svg" alt="CalcLink" class="h-8 w-8 rounded-lg" />
+          <span>CalcLink</span>
+        </a>
+        <div class="ml-auto hidden items-center gap-1 md:flex">
+          <a href="./#features" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tính năng</a>
+          <a href="./#download" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Tải về</a>
+          <a href="huong-dan.html" class="rounded-lg bg-slate-100 px-3 py-2 text-sm font-medium text-ink">Hướng dẫn</a>
+          <a href="lich-su-phien-ban.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Lịch sử phiên bản</a>
+          <a href="chinh-sach.html" class="rounded-lg px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:bg-slate-100 hover:text-ink">Chính sách</a>
+        </div>
+        <a href="./#download" class="ml-auto inline-flex cursor-pointer items-center gap-2 rounded-xl bg-cta-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-cta-600 md:ml-0">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+          Tải về
+        </a>
+      </nav>
+    </header>
+    <main class="mx-auto max-w-3xl px-5 pt-32 pb-20 md:pt-40">
+      <!-- Nội dung lấy từ HUONG_DAN.md (cùng file có trong gói cài đặt) nên hai nơi luôn khớp nhau. -->
+      <article id="guide" class="prose prose-slate max-w-none prose-headings:font-extrabold prose-headings:tracking-tight prose-h1:text-3xl md:prose-h1:text-4xl prose-a:text-brand-700 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-table:text-sm">
+        <p>Đang tải hướng dẫn…</p>
+      </article>
+      <noscript>
+        <p class="mt-6 text-ink-muted">Trang này cần JavaScript để hiển thị. Bạn có thể đọc hướng dẫn ở <a class="font-medium text-brand-700 underline" href="HUONG_DAN.md">HUONG_DAN.md</a>.</p>
+      </noscript>
+    </main>
+    <footer class="border-t border-slate-200 bg-slate-50">
+      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-10 sm:flex-row sm:items-center">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/calclink-icon.svg" alt="" class="h-7 w-7 rounded-md" />
+          <span class="font-bold">CalcLink</span>
+        </div>
+        <nav class="flex flex-wrap gap-4 text-sm text-ink-muted sm:ml-auto">
+          <a href="./#features" class="hover:text-ink">Tính năng</a>
+          <a href="./#download" class="hover:text-ink">Tải về</a>
+          <a href="lich-su-phien-ban.html" class="hover:text-ink">Lịch sử phiên bản</a>
+          <a href="chinh-sach.html" class="hover:text-ink">Chính sách</a>
+          <a href="https://github.com/darkend16987/CalcLink/issues" class="hover:text-ink">Báo lỗi</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+    <script>
+      // "1. Cài đặt" -> "1-cai-dat" (để liên kết #1-cai-dat từ trang chủ nhảy đúng mục).
+      const slug = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/gi, "d").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+      fetch("HUONG_DAN.md")
+        .then((r) => (r.ok ? r.text() : Promise.reject()))
+        .then((md) => {
+          const el = document.getElementById("guide");
+          el.innerHTML = marked.parse(md);
+          el.querySelectorAll("h1,h2,h3").forEach((h) => { h.id = slug(h.textContent); });
+          if (location.hash) {
+            const t = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (t) t.scrollIntoView();
+          }
+        })
+        .catch(() => {
+          document.getElementById("guide").innerHTML =
+            '<p>Không tải được hướng dẫn. Bạn có thể đọc trực tiếp ở <a href="HUONG_DAN.md">HUONG_DAN.md</a>.</p>';
+        });
+    </script>
+  </body>
+</html>
